@@ -9,7 +9,7 @@
 
 @media (max-width: 1000px) {
   .top-nav .logo-wrapper {
-      margin: 5px 10px;
+    margin: 5px 10px;
   }
 }
 
@@ -24,8 +24,8 @@
 
 @media all and (max-width: 1000px) {
   .section-col {
-      width: auto !important;
-      padding: 12px 6px;
+    width: auto !important;
+    padding: 12px 6px;
   }
 }
 
@@ -49,11 +49,17 @@ body::before {
   z-index: -99;
 }
 
-
 /* 文章 */
 
 .title-mask {
-  background: linear-gradient(to right, white 0, rgba(255, 255, 255, 0.3), 80%, white), linear-gradient(to bottom, white 0, transparent 20%, transparent 80%, white);
+  background: linear-gradient(
+      to right,
+      white 0,
+      rgba(255, 255, 255, 0.3),
+      80%,
+      white
+    ),
+    linear-gradient(to bottom, white 0, transparent 20%, transparent 80%, white);
   padding: 40px 0;
 }
 
@@ -138,27 +144,27 @@ body::before {
 
 @media all and (max-width: 1400px) {
   .block-name-wrapper {
-      width: 60px;
+    width: 60px;
   }
   .block-name {
-      font-size: 24px;
+    font-size: 24px;
   }
 }
 
 @media all and (max-width: 1000px) {
   .block-name-wrapper {
-      width: auto;
+    width: auto;
   }
   .block-name {
-      display: inline;
-      font-size: 24px;
-      writing-mode: initial;
-      padding: 12px 30px;
+    display: inline;
+    font-size: 24px;
+    writing-mode: initial;
+    padding: 12px 30px;
   }
   .block-name:before {
-      content: '';
-      background: rgba(159, 35, 26, 1);
-      transform: skewX(-20deg);
+    content: '';
+    background: rgba(159, 35, 26, 1);
+    transform: skewX(-20deg);
   }
 }
 
@@ -179,13 +185,13 @@ body::before {
 
 @media all and (max-width: 1400px) {
   .sidebar {
-      width: 230px;
+    width: 230px;
   }
 }
 
 @media all and (max-width: 1000px) {
   .sidebar {
-      display: none;
+    display: none;
   }
 }
 
@@ -250,7 +256,7 @@ body::before {
   display: block;
 }
 
-.sidebar-block>*:last-child {
+.sidebar-block > *:last-child {
   padding-left: 8px;
 }
 
@@ -279,9 +285,7 @@ body::before {
   color: grey;
 }
 
-
 /* 响应式 */
-
 
 /* @media all and (max-width: 1000px) {
   .p_first,
@@ -470,12 +474,12 @@ body::before {
 }
 
 @media all and (max-width: 500px) {
-.txtlist .item {
-  min-width: fit-content;
-}
-.piclist .item {
-  min-width: fit-content;
-}
+  .txtlist .item {
+    min-width: fit-content;
+  }
+  .piclist .item {
+    min-width: fit-content;
+  }
 }
 
 .sitenav {

@@ -8,11 +8,9 @@ const active = ref(0);
     <div w="4/5"></div>
     <var-tab>test1</var-tab>
   </var-tabs>
-  <var-tabs-items v-model:active="active">
-    <var-tab-item h-1000>
-      <div h-10 w-10>
-        <ExpandCard></ExpandCard>
-      </div>
+  <var-tabs-items v-model:active="active" :can-swipe="false">
+    <var-tab-item>
+      <HonorsTab></HonorsTab>
     </var-tab-item>
     <var-tab-item></var-tab-item>
   </var-tabs-items>

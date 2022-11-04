@@ -1,22 +1,31 @@
 <script setup lang="ts">
 const swipe = ref();
-const images = ref([]);
+const images = ref<any[]>([]);
 onMounted(async () => {
   images.value = (await useData()).swipeImages;
 });
 </script>
 
 <template>
-  <div relative>
-    <var-swipe v-bind="$attrs" ref="swipe">
+  <div relative w-full h-0 pb="9/16">
+    <var-swipe
+      v-bind="$attrs"
+      ref="swipe"
+      absolute
+      top-0
+      bottom-0
+      left-0
+      right-0
+      ondragstart="return false;"
+    >
       <template v-for="image of images" :key="image.title">
         <var-swipe-item>
-          <div relative h-lg>
+          <div relative h-full>
             <img
               absolute
               top="1/2"
               translate-y="-1/2"
-              :src="image.url"
+              :src="image.imgUrl"
               min-h-full
               min-w-full
             />
@@ -30,8 +39,10 @@ onMounted(async () => {
       top="50%"
       left="0"
       style="background: #00000077"
-      h="36"
-      w="12"
+      h="16"
+      w="8"
+      sm:h-36
+      sm:h-12
       hover:opacity-87
       active:opacity-72
       rounded-r
@@ -54,8 +65,10 @@ onMounted(async () => {
       top="50%"
       right="0"
       style="background: #00000077"
-      h="36"
-      w="12"
+      h="16"
+      w="8"
+      sm:h-36
+      sm:h-12
       hover:opacity-87
       active:opacity-72
       rounded-l
