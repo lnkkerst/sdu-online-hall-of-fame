@@ -45,5 +45,11 @@ export default defineConfig({
   // https://github.com/vitest-dev/vitest
   test: {
     environment: 'jsdom'
+  },
+
+  server: {
+    proxy: {
+      '^/txtlist.jsp.*': 'http://online.sdu.edu.cn/'
+    }
   }
 });

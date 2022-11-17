@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+onMounted(async () => {});
+</script>
 
 <template>
   <div rounded w-full relative>

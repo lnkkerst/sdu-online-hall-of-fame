@@ -3,8 +3,8 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
-  presetWebFonts
-  // transformerDirectives,
+  presetWebFonts,
+  transformerDirectives
   // transformerVariantGroup,
 } from 'unocss';
 
@@ -33,7 +33,8 @@ export default defineConfig({
         mono: 'DM Mono'
       }
     })
-  ]
+  ],
+  transformers: [transformerDirectives()]
   // transformers: [
   //   transformerDirectives(),
   //   transformerVariantGroup(),
