@@ -13,7 +13,7 @@
   "dependencies": {
     "@iconify-json/mdi": "^1.1.34",
     "@varlet/touch-emulator": "^2.0.3",
-    "@varlet/ui": "^2.0.3",
+    "@varlet/ui": "^2.2.1",
     "@vueuse/core": "^9.3.0",
     "animejs": "^3.2.1",
     "axios": "^1.1.3",

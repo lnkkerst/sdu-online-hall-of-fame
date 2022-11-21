@@ -20,16 +20,18 @@ onMounted(async () => {
     >
       <template v-for="image of images" :key="image.title">
         <var-swipe-item>
-          <div relative h-full>
-            <img
-              absolute
-              top="1/2"
-              translate-y="-1/2"
-              :src="image.imgUrl"
-              min-h-full
-              min-w-full
-            />
-          </div>
+          <a :href="image.url" target="_blank">
+            <div relative h-full>
+              <img
+                absolute
+                top="1/2"
+                translate-y="-1/2"
+                :src="image.imgUrl"
+                min-h-full
+                min-w-full
+              />
+            </div>
+          </a>
         </var-swipe-item>
       </template>
     </var-swipe>

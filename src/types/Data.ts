@@ -1,5 +1,6 @@
 import type { Person } from './Person';
 import type { SwipeImage } from './SwipeImage';
+import type { Experience } from './Experience';
 
 export interface HallOfFameData {
   swipeImages: SwipeImage[];
@@ -8,4 +9,5 @@ export interface HallOfFameData {
     annualNominations: Person[];
     personOfTheYear: Person[];
   };
+  experiences: Experience[];
 }

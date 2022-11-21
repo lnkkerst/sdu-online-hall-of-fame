@@ -64,8 +64,8 @@ watch(
       return;
     }
 
-    let delay = 200;
-    const duration = 200;
+    let delay = 0;
+    const duration = 400;
     if (newVal) {
       expand.value = true;
       await Promise.all([
@@ -95,7 +95,7 @@ watch(
       ps?.update();
     } else {
       expand.value = false;
-      delay = 100;
+      delay = 0;
       await Promise.all([
         anime({
           targets: imagePosition.value,
@@ -119,7 +119,6 @@ watch(
           easing: 'linear'
         }).finished
       ]);
-      ps?.update();
     }
   }
 );
@@ -172,7 +171,6 @@ onMounted(() => {
       right="0"
       overflow-auto
       px="4"
-      shadow="[-1px_0_0_0_rgba(0,0,0,1)]"
       class="info-container"
       :style="infoPosition"
     >

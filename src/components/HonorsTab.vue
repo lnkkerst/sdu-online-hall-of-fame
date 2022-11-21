@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import anime from 'animejs';
+// import anime from 'animejs';
 import type { HallOfFameData } from '~/types/Data';
 import type { Person } from '~/types/Person';
 
@@ -25,7 +25,7 @@ const floatCardStatus = ref({
   person: { name: '', imgUrl: '', info: '' },
   style: { top: '0', bottom: '0', left: '0', right: '0' },
   reserveStyle: { top: '0', bottom: '0', left: '0', right: '0' },
-  transition: false
+  transition: true
 });
 
 const rowTitle = ['最美辅导员', '年度提名', '年度人物'];
@@ -67,6 +67,8 @@ async function handleCardClick(e: PointerEvent, person: Person) {
     return;
   }
 
+  floatCardStatus.value.transition = false;
+
   floatCardStatus.value.reserveStyle = {
     top: `${(targetRect.top - containerRect.top).toString()}px`,
     bottom: `${(containerRect.bottom - targetRect.bottom).toString()}px`,
@@ -82,30 +84,42 @@ async function handleCardClick(e: PointerEvent, person: Person) {
 
   floatCardStatus.value.show = true;
 
-  swipeShow.value = false;
-  floatCardStatus.value.expand = true;
+  floatCardStatus.value.transition = true;
 
-  anime({
-    targets: floatCardStatus.value.style,
-    top: '8px',
-    bottom: '8px',
-    left: '8px',
-    right: '8px',
-    easing: 'linear',
-    delay: 200,
-    duration: 150
-  });
+  setTimeout(() => {
+    swipeShow.value = false;
+    floatCardStatus.value.expand = true;
+
+    // anime({
+    //   targets: floatCardStatus.value.style,
+    //   top: '8px',
+    //   bottom: '8px',
+    //   left: '8px',
+    //   right: '8px',
+    //   easing: 'linear',
+    //   delay: 200,
+    //   duration: 150
+    // });
+
+    floatCardStatus.value.style = {
+      top: '8px',
+      bottom: '8px',
+      left: '8px',
+      right: '8px'
+    };
+  }, 30);
 }
 
 async function handleFloatCardExit() {
   floatCardStatus.value.expand = false;
-  await anime({
-    targets: floatCardStatus.value.style,
-    ...floatCardStatus.value.reserveStyle,
-    easing: 'linear',
-    delay: 200,
-    duration: 150
-  }).finished;
+  // await anime({
+  //   targets: floatCardStatus.value.style,
+  //   ...floatCardStatus.value.reserveStyle,
+  //   easing: 'linear',
+  //   delay: 200,
+  //   duration: 150
+  // }).finished;
+  floatCardStatus.value.style = { ...floatCardStatus.value.reserveStyle };
   swipeShow.value = true;
   setTimeout(() => (floatCardStatus.value.show = false), 300);
 }
@@ -153,7 +167,7 @@ onMounted(async () => {
       duration="300"
       flex
       flex-col
-      reltive
+      relative
     >
       <template
         v-for="(rowValue, _rowKey, rowIndex) in data?.honors"
@@ -232,7 +246,7 @@ onMounted(async () => {
 
 <style scoped>
 .card-transition {
-  --at-apply: transition-all;
+  --at-apply: transition-all duration-400;
 }
 
 .mdc-elevation--z0 {

@@ -1,4 +1,5 @@
 import type { HallOfFameData } from '~/types/Data';
+import type { Experience } from '~/types/Experience';
 import type { Person } from '~/types/Person';
 import type { SwipeImage } from '~/types/SwipeImage';
 
@@ -6,7 +7,8 @@ const data: HallOfFameData = {
   swipeImages: [
     {
       title: 'test1',
-      imgUrl: 'https://varlet.gitee.io/varlet-ui/cat.jpg'
+      imgUrl: 'https://varlet.gitee.io/varlet-ui/cat.jpg',
+      url: 'https://lnkkerst.me'
     }
   ],
   honors: {
@@ -97,7 +99,15 @@ Google 后找到了这个[补救方法](https://unix.stackexchange.com/questions
         info: 'test2'
       }
     ]
-  }
+  },
+  experiences: [
+    {
+      title: 'test',
+      imgUrl: 'https://s2.loli.net/2022/10/02/SE3AbV7efRr5n9L.jpg',
+      info: '111'.repeat(67),
+      link: 'https://baidu.com'
+    }
+  ]
 };
 
 let x: keyof HallOfFameData['honors'];
@@ -113,6 +123,12 @@ for (let i = 1; i <= 10; ++i) {
   const tmp = JSON.parse(JSON.stringify(data.swipeImages[0])) as SwipeImage;
   tmp.title = i.toString();
   data.swipeImages.push(tmp);
+}
+
+for (let i = 1; i <= 100; ++i) {
+  const tmp = JSON.parse(JSON.stringify(data.experiences[0])) as Experience;
+  tmp.title = i.toString();
+  data.experiences.push(tmp);
 }
 
 export async function useData() {

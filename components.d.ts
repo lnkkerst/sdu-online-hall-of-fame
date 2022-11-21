@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ExpandCard: typeof import('./src/components/ExpandCard.vue')['default']
+    ExperienceTab: typeof import('./src/components/ExperienceTab.vue')['default']
     HonorsTab: typeof import('./src/components/HonorsTab.vue')['default']
     HonorsTabBak: typeof import('./src/components/HonorsTab-bak.vue')['default']
     ImageSwipe: typeof import('./src/components/ImageSwipe.vue')['default']
@@ -19,6 +20,9 @@ declare module '@vue/runtime-core' {
     StarportCarrier: typeof import('vue-starport')['StarportCarrier']
     VarButton: typeof import('@varlet/ui')['_ButtonComponent']
     VarCard: typeof import('@varlet/ui')['_CardComponent']
+    VarCell: typeof import('@varlet/ui')['_CellComponent']
+    VarIcon: typeof import('@varlet/ui')['_IconComponent']
+    VarList: typeof import('@varlet/ui')['_ListComponent']
     VarSwipe: typeof import('@varlet/ui')['_SwipeComponent']
     VarSwipeItem: typeof import('@varlet/ui')['_SwipeItemComponent']
     VarTab: typeof import('@varlet/ui')['_TabComponent']

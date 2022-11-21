@@ -3,10 +3,10 @@ onMounted(async () => {});
 </script>
 
 <template>
-  <div rounded w-full relative>
+  <div w-full relative>
     <ImageSwipe :autoplay="5000"></ImageSwipe>
-    <Page-Tabs></Page-Tabs>
+    <PageTabs></PageTabs>
   </div>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped></style>
