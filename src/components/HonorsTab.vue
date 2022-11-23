@@ -189,55 +189,81 @@ onMounted(async () => {
               </div>
             </div>
           </div>
-          <var-swipe
-            :ref="(el: any) => {swipes[rowIndex] = el}"
-            :indicator="false"
-            :loop="false"
-            ondragstart="return false;"
-          >
-            <var-swipe-item
-              v-for="row in assignToRows(rowValue)"
-              :key="JSON.stringify(row)"
+          <div relative>
+            <var-swipe
+              :ref="(el: any) => {swipes[rowIndex] = el}"
+              :indicator="false"
+              :loop="false"
+              ondragstart="return false;"
             >
-              <div
-                relative
-                h-0
-                w-full
-                :style="{ 'padding-bottom': `${100 / columns}%` }"
+              <var-swipe-item
+                v-for="row in assignToRows(rowValue)"
+                :key="JSON.stringify(row)"
               >
                 <div
-                  absolute
-                  top="0"
-                  bottom="0"
-                  left="0"
-                  right="0"
-                  grid
-                  grid-rows-1
-                  :style="{
-                    'grid-template-columns': `repeat(${columns}, minmax(0, 1fr))`
-                  }"
+                  relative
+                  h-0
+                  w-full
+                  :style="{ 'padding-bottom': `${100 / columns}%` }"
                 >
                   <div
-                    v-for="person in row"
-                    :key="JSON.stringify(person)"
-                    w="full"
-                    h="full"
-                    p="3/100"
+                    absolute
+                    top="0"
+                    bottom="0"
+                    left="0"
+                    right="0"
+                    grid
+                    grid-rows-1
+                    :style="{
+                      'grid-template-columns': `repeat(${columns}, minmax(0, 1fr))`
+                    }"
                   >
-                    <PersonInfoCard
-                      v-ripple
-                      cursor="pointer"
-                      :expand="false"
-                      :person="person"
-                      rounded-md
-                      class="person-card mdc-elevation--z2"
-                      @click="(e: PointerEvent) => handleCardClick(e, person)"
-                    ></PersonInfoCard>
+                    <div
+                      v-for="person in row"
+                      :key="JSON.stringify(person)"
+                      w="full"
+                      h="full"
+                      p="3/100"
+                    >
+                      <PersonInfoCard
+                        v-ripple
+                        cursor="pointer"
+                        :expand="false"
+                        :person="person"
+                        rounded-md
+                        class="person-card mdc-elevation--z2"
+                        @click="(e: PointerEvent) => handleCardClick(e, person)"
+                      ></PersonInfoCard>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </var-swipe-item>
-          </var-swipe>
+              </var-swipe-item>
+            </var-swipe>
+
+            <div
+              absolute
+              right-0
+              top="1/5"
+              bottom="1/5"
+              bg="#00000066"
+              w="1/16"
+              my-2
+              rounded-l-md
+              hover:opacity="86"
+              active:opacity="72"
+              @click="swipes[rowIndex].next()"
+            >
+              <div
+                i-mdi-chevron-double-left
+                text-6
+                w-full
+                absolute
+                top="1/2"
+                translate-y="-1/2"
+                text-white
+              ></div>
+            </div>
+          </div>
         </div>
       </template>
     </div>

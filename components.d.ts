@@ -20,15 +20,11 @@ declare module '@vue/runtime-core' {
     StarportCarrier: typeof import('vue-starport')['StarportCarrier']
     VarButton: typeof import('@varlet/ui')['_ButtonComponent']
     VarCard: typeof import('@varlet/ui')['_CardComponent']
-    VarCell: typeof import('@varlet/ui')['_CellComponent']
-    VarIcon: typeof import('@varlet/ui')['_IconComponent']
     VarList: typeof import('@varlet/ui')['_ListComponent']
     VarSwipe: typeof import('@varlet/ui')['_SwipeComponent']
     VarSwipeItem: typeof import('@varlet/ui')['_SwipeItemComponent']
     VarTab: typeof import('@varlet/ui')['_TabComponent']
-    VarTabItem: typeof import('@varlet/ui')['_TabItemComponent']
     VarTabs: typeof import('@varlet/ui')['_TabsComponent']
-    VarTabsItems: typeof import('@varlet/ui')['_TabsItemsComponent']
   }
   export interface ComponentCustomProperties {
     vRipple: typeof import('@varlet/ui')['_RippleComponent']
